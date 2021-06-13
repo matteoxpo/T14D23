@@ -15,7 +15,7 @@ The russian version of the task can be found in the repository.
 3. [Chapter III](#chapter-iii)
 
 
-## Chapter I
+# Chapter I
 
 ## Level 4. Room 2.
 
@@ -104,7 +104,7 @@ Ok, let's also add a program for clearing data from the file within the specifie
 ***LOADING...***
 
 
-## Chapter III
+# Chapter III
 
 The conflict is resolved, the data is cleared, the code is entered. It's time to get out of here before the AI comes back.
 

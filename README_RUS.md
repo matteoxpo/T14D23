@@ -14,7 +14,7 @@
 3. [Chapter III](#chapter-iii)
 
 
-## Chapter I
+# Chapter I
 
 ## Level 4. Room 2.
 
@@ -39,7 +39,7 @@
 ***LOADING...***
 
 
-## Chapter II
+# Chapter II
 
 ## Quest 1. Back to sort.
 
@@ -105,7 +105,7 @@
 ***LOADING...***
 
 
-## Chapter III
+# Chapter III
 
 Конфликт решен, данные удалены, код введен. Пора уже выходить отсюда, пока не объявился ИИ.
 
