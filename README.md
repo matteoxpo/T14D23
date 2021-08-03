@@ -54,7 +54,7 @@ You notice that the datasets/door_state file is very big. Such records cannot be
 
 | Input | Output |
 | ----- | ----- |
-| datasets/door_state_1<br/>0| 2020 9 1 12 0 0 0 153<br/>2020 3 25 19 37 56 1 951<br/>2020 4 3 1 53 26 1 393<br/>...<br/> 1924 11 22 2 24 10 1 398<br/>1924 11 22 2 24 10 1 398 |
+| datasets/door_state_1<br/>0| 2020 9 1 12 0 0 0 153<br/>2020 3 25 19 37 56 1 951<br/>2020 4 3 1 53 26 1 393<br/>...<br/> 1991 6 28 10 50 57 0 732<br/>1924 11 22 2 24 10 1 398 |
 | datasets/door_state_1<br/>1| 1920 2 24 7 39 14 0 112<br/>1920 4 26 0 32 33 0 926<br/>1920 7 5 18 8 7 1 216<br/>...<br/> 2020 5 30 16 51 40 1 147<br/>2020 9 1 12 0 0 0 153 |
 | datasets/door_state_1<br/>2<br/>2020 12 21 23 54 26 1 768| 1920 2 24 7 39 14 0 112<br/>1920 4 26 0 32 33 0 926<br/>1920 7 5 18 8 7 1 216<br/>...<br/> 2020 5 30 16 51 40 1 147<br/>2020 9 1 12 0 0 0 153<br/>2020 12 21 23 54 26 1 768 |
 
@@ -80,13 +80,13 @@ Command not recognized.
 
 You see the following message in the terminal:
     
-    To check access, determine the code from 01.09.2020 and put it in code.txt.
+    To check access, determine the code from 0*.*2.*0_0 and put it in code.txt.
 
 \> *Looks like file search is required*
 
-Exactly. Based on the message, it needs to be a search by date, in the "DD.MM.YYYY" format. Save the developed program in src/state_search.c, and put the code from 01.09.2020 in src/code.txt. For debugging, create an input of the path to the file and the search string by date. You still shouldn't upload the entire file into RAM.
+Exactly. Based on the message, it needs to be a search by date, in the "DD.MM.YYYY" format. Save the developed program in src/state_search.c, and put the code in src/code.txt. For debugging, create an input of the path to the file and the search string by date. You still shouldn't upload the entire file into RAM.
 
-***== Quest 2 received. Create an src/state_search.c program that conducts a search by date in the binary file in the "DD.MM.YYYY" format. When launched, the program should receive the path to the file and the search string with a date. You cannot upload the entire file into RAM. Record the found code from 01.09.2020 in src/code.txt and output it to the console. If the input file is empty or any error occurred, output n/a. Build the project using the Makefile. Stage name: state_search. Executable file name: Quest_2. ==***
+***== Quest 2 received. Create an src/state_search.c program that conducts a search by date in the binary file in the "DD.MM.YYYY" format. When launched, the program should receive the path to the file and the search string with a date. You cannot upload the entire file into RAM. Record the found code in src/code.txt and output it to the console. If the input file is empty or any error occurred, output n/a. Build the project using the Makefile. Stage name: state_search. Executable file name: Quest_2. ==***
 
 | Input | Output |
 | ----- | ----- |
