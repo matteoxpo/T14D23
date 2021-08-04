@@ -58,6 +58,8 @@ You notice that the datasets/door_state file is very big. Such records cannot be
 | datasets/door_state_1<br/>1| 1920 2 24 7 39 14 0 112<br/>1920 4 26 0 32 33 0 926<br/>1920 7 5 18 8 7 1 216<br/>...<br/> 2020 5 30 16 51 40 1 147<br/>2020 9 1 12 0 0 0 153 |
 | datasets/door_state_1<br/>2<br/>2020 12 21 23 54 26 1 768| 1920 2 24 7 39 14 0 112<br/>1920 4 26 0 32 33 0 926<br/>1920 7 5 18 8 7 1 216<br/>...<br/> 2020 5 30 16 51 40 1 147<br/>2020 9 1 12 0 0 0 153<br/>2020 12 21 23 54 26 1 768 |
 
+> Before sending the task, make sure that no unnecessary entries are displayed on the screen. There should only be an answer to the task
+
 ***LOADING...***
 
 
