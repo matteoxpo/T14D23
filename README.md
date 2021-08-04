@@ -86,7 +86,7 @@ You see the following message in the terminal:
 
 Exactly. Based on the message, it needs to be a search by date, in the "DD.MM.YYYY" format. Save the developed program in src/state_search.c, and put the code in src/code.txt. For debugging, create an input of the path to the file and the search string by date. You still shouldn't upload the entire file into RAM.
 
-***== Quest 2 received. Create an src/state_search.c program that conducts a search by date in the binary file in the "DD.MM.YYYY" format. When launched, the program should receive the path to the file and the search string with a date. You cannot upload the entire file into RAM. Record the found code in src/code.txt and output it to the console. If the input file is empty or any error occurred, output n/a. Build the project using the Makefile. Stage name: state_search. Executable file name: Quest_2. ==***
+***== Quest 2 received. Create an src/state_search.c program that conducts a search by date in the binary file in the "DD.MM.YYYY" format. When launched, the program should receive the path to the file and the search string with a date. You cannot upload the entire file into RAM. Record the found code in src/code.txt and output it to the console. If the input file is empty, record not found or any error occurred, output n/a. Build the project using the Makefile. Stage name: state_search. Executable file name: Quest_2. ==***
 
 | Input | Output |
 | ----- | ----- |
