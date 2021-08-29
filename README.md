@@ -50,7 +50,7 @@ You notice that the datasets/door_state file is very big. Such records cannot be
 
 \> *And that is not going to be easy..*
 
-***== Quest 1 received. Create an src/state_sort.c program that sorts records in the datasets/door_state_1 binary file in ascending order of their dates. The file itself contains an array of structures with integer fields: year, month, day, hour, minute, second, status (0/1), code. The program must accept a file path. Also, there must be a menu where item zero is the output of the file contents to the console, the first item is the output of the sorted file contents, the second item is adding a record and displaying the result on the screen. You cannot upload the entire file into memory at once. Consider the abstraction that the binary file is an array on the disk. Develop helper functions for this abstraction. If the input file is empty, and no new entries are added to it after that, or if any error occurs, output n/a. Build the project using the Makefile. Stage name: state_sort. Executable file name: Quest_1. ==***
+***== Quest 1 received. Create an src/state_sort.c program that sorts records in the datasets/door_state_1 binary file in ascending order of their date and time. The file itself contains an array of structures with integer fields: year, month, day, hour, minute, second, status (0/1), code. The program must accept a file path. Also, there must be a menu where item zero is the output of the file contents to the console, the first item is the output of the sorted file contents, the second item is adding a record and displaying the result on the screen. You cannot upload the entire file into memory at once. Consider the abstraction that the binary file is an array on the disk. Develop helper functions for this abstraction. If the input file is empty, and no new entries are added to it after that, or if any error occurs, output n/a. Build the project using the Makefile. Stage name: state_sort. Executable file name: Quest_1. ==***
 
 | Input | Output |
 | ----- | ----- |
@@ -82,13 +82,13 @@ Command not recognized.
 
 You see the following message in the terminal:
     
-    To check access, determine the code from 0*.*2.*0_0 and put it in code.txt.
+    To check access, determine the code from 0*.**.**_&.
 
 \> *Looks like file search is required*
 
-Exactly. Based on the message, it needs to be a search by date, in the "DD.MM.YYYY" format. Save the developed program in src/state_search.c, and put the code in src/code.txt. For debugging, create an input of the path to the file and the search string by date. You still shouldn't upload the entire file into RAM.
+Exactly. Based on the message, it needs to be a search by date, in the "DD.MM.YYYY" format. Save the developed program in src/state_search.c. Сreate an input of the path to the file and the search string by date. You still shouldn't upload the entire file into RAM.
 
-***== Quest 2 received. Create an src/state_search.c program that conducts a search by date in the binary file in the "DD.MM.YYYY" format. When launched, the program should receive the path to the file and the search string with a date. You cannot upload the entire file into RAM. Record the found code in src/code.txt and output it to the console. If the input file is empty, record not found or any error occurred, output n/a. Build the project using the Makefile. Stage name: state_search. Executable file name: Quest_2. ==***
+***== Quest 2 received. Create an src/state_search.c program that conducts a search by date in the binary file in the "DD.MM.YYYY" format. When launched, the program should receive the path to the file and the search string with a date. You cannot upload the entire file into RAM. Output the found code to the console. If the input file is empty, record not found or any error occurred, output n/a. Build the project using the Makefile. Stage name: state_search. Executable file name: Quest_2. ==***
 
 | Input | Output |
 | ----- | ----- |
@@ -114,7 +114,7 @@ It's locked.
 
 Ok, let's also add a program for clearing data from the file within the specified interval in the "DD.MM.YYYY DD.MM.YYYY" format with a corresponding reduction of its size. It must be placed in src/clear_state.c. For debugging, create an input of the path to the file. Still not uploading the entire file into the RAM. We don't want to totally break down these terminals. Or do we? 
 
-***== Quest 3 received. Create an src/clear_state.c program that clears data for a specific time interval in the file with a corresponding reduction of its size. When launched, the program should receive the path to the file and the time interval in the "DD.MM.YYYY DD.MM.YYYY" format. If the input file is empty or any error occurred, output n/a. Build the project using the Makefile. Stage name: clear_state. Executable file name: Quest_3. ==***
+***== Quest 3 received. Create an src/clear_state.c program that clears data for a specific time interval in the file with a corresponding reduction of its size. When launched, the program should receive the path to the file and the time interval in the "DD.MM.YYYY DD.MM.YYYY" format, both dates inclusive. If the input file is empty or any error occurred, output n/a. Build the project using the Makefile. Stage name: clear_state. Executable file name: Quest_3. ==***
 
 | Input | Output |
 | ----- | ----- |

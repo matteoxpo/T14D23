@@ -9,7 +9,7 @@ check your program and its source code for the style:
   the necessary filters-settings for the style test. The script works in such a way that this 
   configuration file extends its action to all files that lie with it in the directory 
   or in the directories below. So in order for these settings to apply to your source code files, 
-  copy ```CPPLINT. cfg``` to the ```src``` folder. \
+  copy ```CPPLINT. cfg``` to the ```src``` folder (when sending the final solution, this file will be ignored, its presence is not required). \
   \
   To run the script, run the following command: \
   ```python3 materials/linters/cpplint.py --extensions=c src/sourcefile_name.c``` \
