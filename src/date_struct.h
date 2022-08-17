@@ -14,11 +14,8 @@ struct date_struct {
   int code;
 };
 
-struct date_struct read_record_from_file(FILE *pfile, int index);
+int date_struct_input(struct date_struct *d);
 int date_compare_more(struct date_struct d1, struct date_struct d2);
-int get_file_size_in_bytes(FILE *pfile);
-int get_records_count_in_file(FILE *pfile);
-void swap_records_in_file(FILE *pfile, int record_index1, int record_index2);
-void write_record_in_file(FILE *pfile,
-                          const struct date_struct *record_to_write, int index);
+void struct_output(struct date_struct buff);
+
 #endif  // SRC_DATE_STRUCT_H_

@@ -16,7 +16,7 @@ int saveScan(int *input) {
   return res;
 }
 
-char *charInput(int flag) {
+char *charInput() {
   char *res = calloc(1, sizeof(char));
   res[0] = '\0';
   int i = 0;
@@ -33,7 +33,7 @@ char *charInput(int flag) {
       }
       if (res != NULL) {
         if (res[i] == '\n') {
-          if (!flag) res[i] = '\0';
+          res[i] = '\0';
           break;
         }
         i++;
@@ -42,30 +42,6 @@ char *charInput(int flag) {
         res = NULL;
         break;
       }
-    }
-  }
-  return res;
-}
-
-char *charInputFromFile(FILE *f) {
-  char *res = malloc(sizeof(char));
-  char buff;
-  int counter = 0;
-  while (fread(&buff, sizeof(char), 1, f)) {
-    res = realloc(res, sizeof(char));
-    res[counter] = buff;
-    counter++;
-  }
-  return res;
-}
-
-int charInputInFile(FILE *f, char *write) {
-  int res = 1;
-  if (f == NULL && write == NULL) {
-    res = 0;
-  } else {
-    for (size_t i = 0; i < strlen(write); i++) {
-      fputc(write[i], f);
     }
   }
   return res;

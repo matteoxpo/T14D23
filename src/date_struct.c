@@ -1,14 +1,7 @@
 
 #include "date_struct.h"
 
-struct date_struct read_record_from_file(FILE *pfile, int index) {
-  int offset = index * sizeof(struct date_struct);
-  fseek(pfile, offset, SEEK_SET);
-  struct date_struct record;
-  fread(&record, sizeof(struct date_struct), 1, pfile);
-  rewind(pfile);
-  return record;
-}
+#include <stdlib.h>
 
 int date_compare_more(struct date_struct d1, struct date_struct d2) {
   int res = 1;
@@ -34,36 +27,37 @@ int date_compare_more(struct date_struct d1, struct date_struct d2) {
   return res;
 }
 
-int get_file_size_in_bytes(FILE *pfile) {
-  int size = 0;
-  fseek(pfile, 0, SEEK_END);
-  size = ftell(pfile);
-  rewind(pfile);
-  return size;
+int date_struct_input(struct date_struct *date) {
+  int res = 0;
+
+  int y;
+  int mo;
+  int d;
+  int h;
+  int min;
+  int se;
+  int stat;
+  int cod;
+  char c;
+
+  if (scanf("%d %d %d %d %d %d %d %d%c", &y, &mo, &d, &h, &min, &se, &stat,
+            &cod, &c) == 9 &&
+      (c == '\n' || c == '\0')) {
+    date->year = y;
+    date->month = mo;
+    date->day = d;
+    date->houre = h;
+    date->minute = min;
+    date->sec = se;
+    date->status = stat;
+    date->code = cod;
+    res = 1;
+  }
+
+  return res;
 }
 
-int get_records_count_in_file(FILE *pfile) {
-  return get_file_size_in_bytes(pfile) / sizeof(struct date_struct);
-}
-
-void swap_records_in_file(FILE *pfile, int record_index1, int record_index2) {
-  struct date_struct record1 = read_record_from_file(pfile, record_index1);
-  struct date_struct record2 = read_record_from_file(pfile, record_index2);
-
-  write_record_in_file(pfile, &record1, record_index2);
-  write_record_in_file(pfile, &record2, record_index1);
-}
-
-void write_record_in_file(FILE *pfile,
-                          const struct date_struct *record_to_write,
-                          int index) {
-  int offset = index * sizeof(struct date_struct);
-
-  fseek(pfile, offset, SEEK_SET);
-
-  fwrite(record_to_write, sizeof(struct date_struct), 1, pfile);
-
-  fflush(pfile);
-
-  rewind(pfile);
+void struct_output(struct date_struct buff) {
+  printf("%d:%d:%d:%d:%d:%d\t%d\t%d\n", buff.year, buff.month, buff.day,
+         buff.houre, buff.minute, buff.sec, buff.status, buff.code);
 }
