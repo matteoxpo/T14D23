@@ -12,5 +12,6 @@ void swap_records_in_file(FILE *pfile, int record_index1, int record_index2);
 int get_records_count_in_file(FILE *pfile);
 int get_file_size_in_bytes(FILE *pfile);
 void sorting(FILE *f);
+void file_output(FILE *f);
 
 #endif  // SRC_BINARY_FILES_COMMON_FUNCTIONS_H_
