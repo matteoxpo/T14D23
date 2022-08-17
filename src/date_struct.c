@@ -27,6 +27,36 @@ int date_compare_more(struct date_struct d1, struct date_struct d2) {
   return res;
 }
 
+int date_compare_less(struct date_struct d1, int y, int m, int d, int flag) {
+  int res = 1;
+  if (flag == 0) {
+    if (d1.year < y) res = 0;
+    if (d1.year > y) res = 1;
+    if (d1.year == y) {
+      if (d1.month < m) res = 0;
+      if (d1.month > m) res = 1;
+      if (d1.month == m) {
+        if (d1.day < d) res = 0;
+        if (d1.day > d) res = 1;
+        if (d1.day == d) res = 0;
+      }
+    }
+  } else {
+    if (d1.year < y) res = 1;
+    if (d1.year > y) res = 0;
+    if (d1.year == y) {
+      if (d1.month < m) res = 1;
+      if (d1.month > m) res = 0;
+      if (d1.month == m) {
+        if (d1.day < d) res = 1;
+        if (d1.day > d) res = 0;
+        if (d1.day == d) res = 0;
+      }
+    }
+  }
+  return res;
+}
+
 int date_struct_input(struct date_struct *date) {
   int res = 0;
 
@@ -58,6 +88,8 @@ int date_struct_input(struct date_struct *date) {
 }
 
 void struct_output(struct date_struct buff) {
-  printf("%d:%d:%d:%d:%d:%d\t%d\t%d\n", buff.year, buff.month, buff.day,
-         buff.houre, buff.minute, buff.sec, buff.status, buff.code);
+  printf("%d %d %d %d %d %d %d %d", buff.year, buff.month, buff.day, buff.houre,
+         buff.minute, buff.sec, buff.status, buff.code);
 }
+
+int get_ymd_sum(struct date_struct d) { return d.year + d.month + d.minute; }

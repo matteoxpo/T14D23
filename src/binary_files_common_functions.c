@@ -71,6 +71,7 @@ void sorting(FILE *f) {
 void file_output(FILE *f) {
   for (int i = 0; i < get_records_count_in_file(f); i++) {
     struct_output(read_record_from_file(f, i));
+    if (i != get_records_count_in_file(f) - 1) printf("\n");
   }
 }
 

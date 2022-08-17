@@ -56,7 +56,7 @@ int scan_date(int *day, int *month, int *year) {
   char c;
   int res = 0;
   if (scanf("%d.%d.%d%c", &d, &m, &y, &c) == 4 &&
-      (c == '\n' || c == '\0' || c == EOF)) {
+      (c == '\n' || c == '\0' || c == EOF) && d > 0 && m > 0 && y >= 0) {
     *day = d;
     *month = m;
     *year = y;

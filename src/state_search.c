@@ -11,9 +11,8 @@ int main() {
   FILE *f = fopen(path, "r");
   if (f != NULL) {
     int d, m, y;
-    char c;
     if (scan_date(&d, &m, &y)) {
-      int index = searh(f, d, m, c);
+      int index = search(f, d, m, y);
       if (index == -1)
         printf("n/a");
       else {

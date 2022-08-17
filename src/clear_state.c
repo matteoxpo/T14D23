@@ -10,23 +10,40 @@ int main() {
   char *path = charInput();
   FILE *f = fopen(path, "r");
   if (f != NULL) {
-    int d, m, y;
-    char c;
-    if (scanf("%d.%d.%d%c", &d, &m, &y, &c) == 4 &&
-        (c == '\n' || c == '\0' || c == EOF)) {
+    int y1, m1, d1;
+    int y2, m2, d2;
+    if (scan_date(&d1, &m1, &y1) && scan_date(&d2, &m2, &y2)) {
+      printf("i am here0\n");
       struct date_struct dat;
-      int flag = 0;
-      for (int i = 0; i < get_records_count_in_file(f); i++) {
+      FILE *buff = tmpfile();
+      int size = get_records_count_in_file(f);
+      printf("i am here1\n");
+      for (int i = 0, k = 0; i < size; i++) {
         dat = read_record_from_file(f, i);
-        if (dat.day == d && dat.month == m && dat.year == y) {
-          flag = 1;
-          break;
+        if (date_compare_less(dat, y1, m1, d1, 1)) {
+          write_record_in_file(buff, &dat, k);
+          k++;
+        }
+        if (date_compare_less(dat, y2, m2, d2, 0)) {
+          write_record_in_file(buff, &dat, k);
+          k++;
         }
       }
-      if (!flag)
-        printf("n/a");
-      else
-        printf("%d\n", dat.code);
+      fclose(f);
+
+      f = fopen(path, "ab+");
+      size = get_records_count_in_file(buff);
+      for (int i = 0; i < size; i++) {
+        printf("i am here2.1\n");
+        dat = read_record_from_file(buff, i);
+        write_record_in_file(f, &dat, i);
+      }
+      printf("i am here3\n");
+      file_output(f);
+      printf("\n\n%d", size);
+      fclose(f);
+
+      fclose(buff);
 
     } else {
       printf("n/a");
