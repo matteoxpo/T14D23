@@ -13,11 +13,9 @@ int main() {
     int y1, m1, d1;
     int y2, m2, d2;
     if (scan_date(&d1, &m1, &y1) && scan_date(&d2, &m2, &y2)) {
-      printf("i am here0\n");
       struct date_struct dat;
       FILE *buff = tmpfile();
       int size = get_records_count_in_file(f);
-      printf("i am here1\n");
       for (int i = 0, k = 0; i < size; i++) {
         dat = read_record_from_file(f, i);
         if (date_compare_less(dat, y1, m1, d1, 1)) {
@@ -34,11 +32,9 @@ int main() {
       f = fopen(path, "ab+");
       size = get_records_count_in_file(buff);
       for (int i = 0; i < size; i++) {
-        printf("i am here2.1\n");
         dat = read_record_from_file(buff, i);
         write_record_in_file(f, &dat, i);
       }
-      printf("i am here3\n");
       file_output(f);
       printf("\n\n%d", size);
       fclose(f);
