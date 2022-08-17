@@ -12,22 +12,14 @@ int main() {
   if (f != NULL) {
     int d, m, y;
     char c;
-    if (scanf("%d.%d.%d%c", &d, &m, &y, &c) == 4 &&
-        (c == '\n' || c == '\0' || c == EOF)) {
-      struct date_struct dat;
-      int flag = 0;
-      for (int i = 0; i < get_records_count_in_file(f); i++) {
-        dat = read_record_from_file(f, i);
-        if (dat.day == d && dat.month == m && dat.year == y) {
-          flag = 1;
-          break;
-        }
-      }
-      if (!flag)
+    if (scan_date(&d, &m, &y)) {
+      int index = searh(f, d, m, c);
+      if (index == -1)
         printf("n/a");
-      else
+      else {
+        struct date_struct dat = read_record_from_file(f, index);
         printf("%d\n", dat.code);
-
+      }
     } else {
       printf("n/a");
     }

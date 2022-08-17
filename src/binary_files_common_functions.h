@@ -13,5 +13,6 @@ int get_records_count_in_file(FILE *pfile);
 int get_file_size_in_bytes(FILE *pfile);
 void sorting(FILE *f);
 void file_output(FILE *f);
+int searh(FILE *f, int d, int m, int y);
 
 #endif  // SRC_BINARY_FILES_COMMON_FUNCTIONS_H_

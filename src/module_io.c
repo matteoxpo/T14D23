@@ -50,3 +50,17 @@ char *charInput() {
 void str_output(char *str) {
   for (int i = 0; i < (int)strlen(str); i++) printf("%c", str[i]);
 }
+
+int scan_date(int *day, int *month, int *year) {
+  int d, m, y;
+  char c;
+  int res = 0;
+  if (scanf("%d.%d.%d%c", &d, &m, &y, &c) == 4 &&
+      (c == '\n' || c == '\0' || c == EOF)) {
+    *day = d;
+    *month = m;
+    *year = y;
+    res = 1;
+  }
+  return res;
+}

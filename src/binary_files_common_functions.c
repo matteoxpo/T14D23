@@ -73,3 +73,15 @@ void file_output(FILE *f) {
     struct_output(read_record_from_file(f, i));
   }
 }
+
+int search(FILE *f, int d, int m, int y) {
+  struct date_struct dat;
+  int i = -1;
+  for (i = 0; i < get_records_count_in_file(f); i++) {
+    dat = read_record_from_file(f, i);
+    if (dat.day == d && dat.month == m && dat.year == y) {
+      break;
+    }
+  }
+  return i;
+}
