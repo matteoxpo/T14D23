@@ -13,9 +13,9 @@ int main() {
     int d, m, y;
     if (scan_date(&d, &m, &y)) {
       int index = search(f, d, m, y);
-      if (index == -1)
+      if (index == -1) {
         printf("n/a");
-      else {
+      } else {
         struct date_struct dat = read_record_from_file(f, index);
         printf("%d\n", dat.code);
       }
